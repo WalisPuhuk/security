@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -23,7 +24,8 @@ public class Role {
 	private Set<Member> members;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqRoleId")
+	@SequenceGenerator(name = "seqRoleId", initialValue = 1, allocationSize = 1)
 	public Long getId() {
 		return id;
 	}
