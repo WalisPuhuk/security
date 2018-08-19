@@ -58,6 +58,13 @@ public class MainController {
 		return "login";
 	}
 	
+	
+	
+	/**
+	 * 首頁預設進入 "welcome.html"
+	 * @author Walis
+	 * @param model
+	 */
 	@GetMapping({"/", "welcome"})
     public String welcome(Model model) {
         return "welcome";
